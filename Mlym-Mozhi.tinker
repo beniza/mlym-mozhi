@@ -105,7 +105,7 @@ R	> replace 【$F】 with 【$Rൃ】 usingMap 〔Chillu2Base〕【ം മ】
  
 l	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ല്】 
 	| map 【ൽ ല്ല്】【@ ൢ】【ൿ ക്ല്】【ൾ ഌ ൡ】 //  "് ൢ ൣ", 
-	| replace 【$F】 with 【$Rൢ】 usingMap 【ൻ ന】【ൺ ണ】【ർ ര】【ൽ ല】【ൾ ള】 
+	// | replace 【$F】 with 【$Rൢ】 usingMap 【ൻ ന】【ൺ ണ】【ർ ര】【ൽ ല】【ൾ ള】 
 	| DoChilluFixAndSend 【ല്】【ൽ】
 
 L	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ല്】 
