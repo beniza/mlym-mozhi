@@ -147,10 +147,10 @@ p	> map 【ം മ്പ്】【ൽ ല്പ്】【ല്പ് ൽപ്പ
 
 q	> 【ക്ക്】
 
-r	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ര്】 
+r	> after 【സ】 send 【】
 	| after 【ൻ】 replace 【〔ZWNJ〕】 with 【ര്】
 	| after 【ർ】 replace 【〔ZWNJ〕】 with 【റ്】
-	| map 【ൻ ന്ര്】【ർ റ്】
+	| map 【ൻ ന്ര്】【ർ റ്】【ം മ്ര്】
 	| DoChilluFixAndSend 【ർ】【ർ】 //  what is the best replacement char here??? 
 
 s	> DoChilluFixAndSend 【സ്】【സ്】
