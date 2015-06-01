@@ -12,6 +12,7 @@ Settings:
 define Chillu2Base 【ൻ ന】【ൺ ണ】【ർ ര】【ൽ ല】【ൾ ള】【ൿ ക】
 define AnyLetterExceptSA [അ-ഷഹ]
 define AnyRegularLetterOrVowelSign [അ-ഹഺാ-ൌൗൠ-ൣ]
+define AnyRegularLetterOrVowelSignExceptSA [അ-ഷഹഺാ-ൌൗൠ-ൣ] 
 define ZWNJ 〔200C〕
 
 function DoDigit 【western】【mal】
@@ -103,12 +104,12 @@ R	> replace 【$F】 with 【$Rൃ】 usingMap 〔Chillu2Base〕【ം മ】
 	| map 【് ൃ ൄ ൄൄ】【@ ൃ】【ഋ ൠ】
 	| DoChilluFixAndSend 【ഋ】【ഋ】
  
-l	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ല്】 
+l	> after 【〔AnyRegularLetterOrVowelSignExceptSA〕】 replace 【ം】 with 【മ്ല്】 
 	| map 【ൽ ല്ല്】【@ ൢ】【ൿ ക്ല്】【ൾ ഌ ൡ】 //  "് ൢ ൣ", 
 	// | replace 【$F】 with 【$Rൢ】 usingMap 【ൻ ന】【ൺ ണ】【ർ ര】【ൽ ല】【ൾ ള】 
 	| DoChilluFixAndSend 【ല്】【ൽ】
 
-L	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ല്】 
+L	> after 【〔AnyRegularLetterOrVowelSignExceptSA〕】 replace 【ം】 with 【മ്ല്】 
 	| map 【ൾ ള്ള്】【ൻ ന്ല്】【ൽ ല്ല്】【ൿ ക്ല്】 
 	| DoChilluFixAndSend 【ല്】【ൾ】
 
@@ -138,7 +139,7 @@ m	> after 【〔AnyRegularLetterOrVowelSign〕】 send 【ം】
 	| map 【ം മ്മ്】【ൺ ണ്മ്】【ൻ ന്മ്】
 	| DoChilluFixAndSend 【മ്】【മ്】
 
-n	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ന്】 
+n	> after 【〔AnyRegularLetterOrVowelSignExceptSA〕】 replace 【ം】 with 【മ്ന്】 
 	| replace 【ൻ】 with 【ന്ന്】
 	| DoChilluFixAndSend 【ന്】【ൻ】
 
