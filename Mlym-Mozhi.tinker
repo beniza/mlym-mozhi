@@ -1,4 +1,4 @@
-﻿	// Mozhi Keyboard in Tinker Format
+	// Mozhi Keyboard in Tinker Format
 	// Version 0.900
 
 	// History:
@@ -12,6 +12,7 @@ Settings:
 define Chillu2Base 【ൻ ന】【ൺ ണ】【ർ ര】【ൽ ല】【ൾ ള】【ൿ ക】
 define AnyLetterExceptSA [അ-ഷഹ]
 define AnyRegularLetterOrVowelSign [അ-ഹഺാ-ൌൗൠ-ൣ]
+define AnyRegularLetterOrVowelSignExceptSA [അ-ഷഹഺാ-ൌൗൠ-ൣ] 
 define ZWNJ 〔200C〕
 
 function DoDigit 【western】【mal】
@@ -103,12 +104,14 @@ R	> replace 【$F】 with 【$Rൃ】 usingMap 〔Chillu2Base〕【ം മ】
 	| map 【് ൃ ൄ ൄൄ】【@ ൃ】【ഋ ൠ】
 	| DoChilluFixAndSend 【ഋ】【ഋ】
  
-l	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ല്】 
+l	> after 【〔AnyRegularLetterOrVowelSignExceptSA〕】 replace 【ം】 with  【മ്ല്】 
+// l	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ല്】 
 	| map 【ൽ ല്ല്】【@ ൢ】【ൿ ക്ല്】【ൾ ഌ ൡ】 //  "് ൢ ൣ", 
 	// | replace 【$F】 with 【$Rൢ】 usingMap 【ൻ ന】【ൺ ണ】【ർ ര】【ൽ ല】【ൾ ള】 
 	| DoChilluFixAndSend 【ല്】【ൽ】
 
-L	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ല്】 
+L	> after 【〔AnyRegularLetterOrVowelSignExceptSA〕】 replace 【ം】 with 【മ്ല്】 
+// L	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ല്】 
 	| map 【ൾ ള്ള്】【ൻ ന്ല്】【ൽ ല്ല്】【ൿ ക്ല്】 
 	| DoChilluFixAndSend 【ല്】【ൾ】
 
@@ -134,11 +137,12 @@ j	> map 【ൻ ഞ്】【ന്ന് ഞ്ഞ്】【ന് ഞ്】
 k	> map 【ൻ ങ്ക്】【ന് ങ്ക്】【ൿ ക്ക്】
 	| DoChilluFixAndSend 【ക്】【ക്】
 
-m	> after 【〔AnyRegularLetterOrVowelSign〕】 send 【ം】
+m	> after 【〔AnyRegularLetterOrVowelSignExceptSA〕】 send 【ം】
 	| map 【ം മ്മ്】【ൺ ണ്മ്】【ൻ ന്മ്】
 	| DoChilluFixAndSend 【മ്】【മ്】
 
-n	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ന്】 
+n	> after 【〔AnyRegularLetterOrVowelSignExceptSA〕】 replace 【ം】 with 【മ്ന്】 
+// n	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ന്】 
 	| replace 【ൻ】 with 【ന്ന്】
 	| DoChilluFixAndSend 【ന്】【ൻ】
 
@@ -147,10 +151,9 @@ p	> map 【ം മ്പ്】【ൽ ല്പ്】【ല്പ് ൽപ്പ
 
 q	> 【ക്ക്】
 
-r	> after 【〔AnyLetterExceptSA〕】 replace 【ം】 with 【മ്ര്】 
-	| after 【ൻ】 replace 【〔ZWNJ〕】 with 【ര്】
+r	> after 【സ】 replace【ം】 with【ംർ】 //is there a better way of expressing this? 
 	| after 【ർ】 replace 【〔ZWNJ〕】 with 【റ്】
-	| map 【ൻ ന്ര്】【ർ റ്】
+	| map 【ൻ ന്ര്】【ർ റ്】【ം മ്ര്】
 	| DoChilluFixAndSend 【ർ】【ർ】 //  what is the best replacement char here??? 
 
 s	> DoChilluFixAndSend 【സ്】【സ്】
