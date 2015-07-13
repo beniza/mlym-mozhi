@@ -29,6 +29,8 @@ function DoChilluFixAndSend 【form1】【form2】
 _	> after 【〔ZWNJ〕】 send 【】 // To prevent repeated typing of ZWNJs. 
 	| 【〔ZWNJ〕】 
 
+#	> map 【ർ ൎ】
+
 ~	> map 【ൻ ന്】【ൺ ണ്】【ർ ര്】【ൽ ല്】【ൾ ള്】【ൿ ക്】【ഋ റ്】
 	| after 【〔AnyRegularLetterOrVowelSign〕】 send 【്】
 	| DoChilluFixAndSend 【്】【്】 
