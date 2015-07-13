@@ -32,6 +32,12 @@ _	> after 【〔ZWNJ〕】 send 【】 // To prevent repeated typing of ZWNJs.
 #	> map 【ർ ൎ】
 	| 【#】
 
+"	> map 【“ ” "】
+	| 【“】
+
+'	> map 【‘ ’ '】
+	| 【‘】
+
 ~	> map 【ൻ ന്】【ൺ ണ്】【ർ ര്】【ൽ ല്】【ൾ ള്】【ൿ ക്】【ഋ റ്】
 	| after 【〔AnyRegularLetterOrVowelSign〕】 send 【്】
 	| DoChilluFixAndSend 【്】【്】 
