@@ -42,22 +42,22 @@ _	> after 【〔ZWNJ〕】 send 【】 // To prevent repeated typing of ZWNJs.
 	| after 【〔AnyRegularLetterOrVowelSign〕】 send 【്】
 	| DoChilluFixAndSend 【്】【്】 
  
--	> map 【\\ −】
+-	> map 【\ −】
 	| 【-】
  
-*	> map 【\\ ×】
+*	> map 【\ ×】
 	| 【*】
  
-/	> map 【\\ ÷】【/ ഽ //】 
+/	> map 【\ ÷】【/ ഽ //】 
 	| 【/】
  
 \	> map 【ൻ ന്‍】【ൺ ണ്‍】【ർ ര്‍】【ൽ ല്‍】【ൾ ള്‍】【ൿ ക്‍】【റ്റ് ഺ】 //  switch between Atomic and Sequence Chillu Characters
-	| map 【ീ ൟ】【ൗ ൌ】【ഋ 】// 【】Malayalam Archaic Characters
+	| map 【ീ ൟ】【ൗ ൌ】 // Malayalam Archaic Characters
 	| map 【ന്‍ ൻ】【ണ്‍ ൺ】【ര്‍ ർ】【ല്‍ ൽ】【ള്‍ ൾ】【ക്‍ ൿ】【ഺ റ്റ്】
 	| map 【മ് ം】【ആ ാ】【ഇ ി】【ഈ ീ】【ഉ ു】【ഊ ൂ】【ഋ ൃ】【ൠ ൄ】【ഌ ൢ】【ൡ ൣ】【എ െ】【ഏ േ】【ഐ ൈ】【ഒ ൊ】【ഓ ോ】【ഔ ൗ】 // directly key vowel signs 
 	| map 【ൻ ൹】【10 ൰】【100 ൱】【1000 ൲】【1/4 ൳】【1/2 ൴】【3/4 ൵】
  	| map 【--- —】【-- –】【- −】  // Dashes 
-	| 【. ।】【। ॥】
+	| map 【. ।】【। ॥】
 	| 【\】
 
 ^	> map 【ൻ ൹】【10 ൰】【100 ൱】【1000 ൲】【1/4 ൳】【1/2 ൴】【3/4 ൵】
